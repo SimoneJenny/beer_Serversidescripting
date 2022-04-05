@@ -1,0 +1,167 @@
+body{
+    background-color: hotpink;
+    position:fixed"
+    
+}
+/*baggrund oppasity*/
+.first{
+  opacity: 0.5;
+}
+.second{
+  opacity: 0.5;
+}
+/*baggrund streg*/
+/*img ikke i brug*/
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+}
+h1 {
+    overflow: hidden;
+    text-align: center;
+}
+h1:before,
+h1:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 80%;
+}
+h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+h1:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+/*database streg*/
+
+h2:before,
+h2:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 80%;
+}
+h2:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+h2:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+/* 
+table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td {
+    text-align: center;
+  }
+
+  table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  height: 50px;
+  vertical-align: bottom;
+} */
+/*boks ved overskrift*/
+.box-shadow {
+    font-family: cursive, sans-serif;
+    background-color: hotpink;
+    color: black;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 15px 15px #ff7096;
+  }
+  /*bliver ikke brugt*/
+  .box-with-fills {
+    font-family: cursive, sans-serif;
+    background-color: hotpink;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 15px 15px #ff7096;
+  }
+/*database table*/
+table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td {
+    height: 50px;
+    vertical-align: bottom;
+  }
+  /*design af skrive og input felter + knapper*/
+  .Yeartxt{margin-left: 500px;font-family: fantasy; font-weight: bold;}
+  .alkoholdbeertxt{margin-left: 500px;font-family: fantasy; font-weight: bold;}
+  .farvebeertxt{margin-left: 500px;font-family: fantasy; font-weight: bold;}
+  .navnbeertxt{margin-left:500px; font-family: fantasy; font-weight: bold;}
+  .navnbeer{margin-left: 80px; height: 25px; width: 250px; }
+  .farvebeer{margin-left: 95px; height: 25px;width: 250px;}
+  .alkoholdbeer{margin-left: 25px;height: 25px;width: 250px;}
+  .produktionbeer{margin-left: 500px;font-family: fantasy; font-weight: bold;}
+  .year{margin-left: 30px; font-family: fantasy; font-weight: bold;height: 25px; width: 260px;}
+  .submit{margin-left: 800px;background-color: chartreuse;height: 25px; width: 70px;font-family: fantasy; font-weight: bold;}
+  .reset{background-color: red;height: 25px; width: 70px; font-family: fantasy; font-weight: bold;}
+  .valuetypetxt{margin-left: 500px;font-family: fantasy; font-weight: bold;}
+  .valuetype{margin-left: 100px; font-family: fantasy; font-weight: bold;height: 25px; width: 260px;}
+  .billede{margin-left: 100px;font-family: fantasy; font-weight: bold;}
+  .billedetxt{margin-left: 500px; height: 25px;width: 250px;font-weight: bold;}
+  .picturepicked{margin-left: 1000px;font-family: fantasy; font-weight: bold;height: 200px; width: 200px; margin-top: 20px; margin-bottom: 20px;}
+
+  /*udfylder database tables*/
+  #tablefills {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  /*standard for design uden curser*/
+  #tablefills td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+ /*når man bruger curseren over table*/
+  #tablefills tr:hover {background-color: rgb(228, 176, 217);}
+  
+  /*til database top beskrivelse*/
+  #tablefills th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #FF717E;
+    color: white;
+  }
+ 

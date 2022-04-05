@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('Partiels/head') %>
+        <link rel="stylesheet" href="/css/Beer/css>
+
+        <!--kan også bruges istedet for nedstående-->
+
+    <!-- <meta charset=" UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/css/styleBeer.css">
+        <title>
+            <%= typeof title !='undefined' ? title : '' %>
+        </title>
+
+        <title>Document</title>
+
+</head>
+
+<body">
+    <!--form start-->
+    <form method="post" enctype="multipart/form-data">
+        <!--Express Fileupload-->
+        <!--name i hver felt skal passe med variablerne-->
+        <!--value i hver felt skal passe med variablerne-->
+         <!--class er til css filerne /stylesheet-->
+         <!--selected i select tags er til at kunne ændre i eksistende øl i tabellen-->
+         
+        <%- include('Partiels/Menu') %>
+            <h1 class="box-shadow"> Administre Øl</h1>
+            <br><br><br>
+            <!--navn på øl + input-->
+            <div>
+                <label type="navn" class="navnbeertxt">Øl navn</label>
+                <input type="text" class="navnbeer" name="navn" value="<%= beer?.navn %>"> 
+            </div>
+            <br>
+            <!--farve på øl + input-->
+            <div>
+                <label type="navn" class="farvebeertxt">Farve</label>
+                <input type="text" name="farve" class="farvebeer" value="<%= beer?.farve %>">
+            </div>
+            <br>
+            <!--alkoholdprocent på øl + input-->
+            <div>
+                <label type="navn" class="alkoholdbeertxt" value="<%= beer?.procenter%>">Alkohol procent</label>
+                <input type="number" name="procenter" class="alkoholdbeer" value="<%= beer?.procenter %>"></select>
+            </div>
+            <br>
+            <!--årstal på øl + input((select))-->
+            <div>
+                <label type="navn" class="produktionbeer" class="Yeartxt" value="<%= beer?.Produktions %>"> produktions
+                    år</label>
+                <select name="produktions" class="year">
+                    <option>vælg år</option>
+                    <% for(let i=new Date().getFullYear(); i> new Date().getFullYear() -101; i--){ %>
+                        <option value="<%= i %>" <%=beer?.produktions==i ? "selected" : "" %>><%= i%>
+                        </option>
+                        <% }%>
+                </select>
+            </div><br>
+            <!--type på øl + input((select))-->
+            <div>
+                <label class="valuetypetxt">Type</label>
+                <select name="type" class="valuetype">
+                    <option>Vælg type</option>
+                    <% types.forEach(type=> { %>
+                        <option value="<%=type.type %>" <%=type.type==beer?.type ? "selected" : "" %>>
+                            <%= type.type%>
+                        </option>
+                        <% }); %>
+                </select>
+            </div>
+            <br>
+            <!--billede på øl + input(href))-->
+            <div class="billedetxt">billede<input type="file" name="billede" class="billede"
+                    value="<%= beer?.billede %>"></div>
+
+            <% if(beer?.billede && beer.billede !='' ) {%>
+                <a href="/admin/beer/<%= beer._id %>/Images/remove" class="removelink"
+                    title="klik for a slette billedet" onclick="return confirm('Er du sikker på du vil slette?')"><img
+                        src="/Images/<%=beer.billede %>" class="picturepicked" style="width: 150px;"></a>
+
+                <% } %>
+                    <!--submit og reset knap-->
+
+                    <br><br>
+                    <input type="submit" value="Gem" class="submit">
+                    <input type="reset" value="Nulstil" class="reset">
+                    <span>
+                        <%= typeof message !='undefined' ? message : '' %>
+                    </span>
+
+    </form>
+    <!--form slut-->
+
+    <!--Database-->
+    <h2>Database</h2>
+    <% if(typeof beers !='undefined' && beers.length>0){%>
+        <table id="tablefills">
+            <!--database overskrift indhold-->
+            <!--OBS skal være i samme orden som td tags-->
+            <tr>
+                <th>ID</th>
+                <th>Navn</th>
+                <th>Type</th>
+                <th>Farve</th>
+                <th>Procenter</th>
+                <th>Produktions</th>
+                <th>Billede</th>
+                <th>Handlinger</th>
+
+            </tr>
+            <!--løber data igennem i en forEach-->
+            <% beers.forEach((beer)=> {%>
+
+                <tr>
+                    <td>
+                        <%=beer?.id %>
+                    </td>
+                    <td>
+                        <%=beer?.navn %>
+                    </td>
+                    <td>
+                        <%=beer?.type %>
+                    </td>
+                    <td>
+                        <%=beer?.farve %>
+                    </td>
+                    <td>
+                        <%=beer?.procenter %>
+                    </td>
+                    <td>
+                        <%=beer?.produktions %>
+                    <td> <img src="/Images/<%= beer?.billede %>" alt="Fotografi på vej"
+                            style="width:150px; padding:0; margin: 0;"></td>
+                    <td>
+                        <!--href /knapper/links-->
+                        <a href="/admin/beer/edit/<%= beer?.id %> ">Ret</a>
+                        <a href="/admin/beer/delete/<%= beer?.id %>"
+                            onClick="return confirm('Er du sikker på du vil slette?')">slet</a>
+                    </td>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+        <!--table slut-->
+        <% } %>
+
+            </body>
+</html>

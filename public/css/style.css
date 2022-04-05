@@ -1,0 +1,43 @@
+body{
+    background-color: hotpink;
+    font-weight: bold;
+    counter-reset: section;
+}
+/*Bagrund opasity*/
+.first{
+    opacity: 0.5;
+  }
+  .second{
+    opacity: 0.5;
+  }
+
+/*streg over h1*/ 
+h1 {
+    overflow: hidden;
+    text-align: center;
+}
+h1:before,
+h1:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 80%;
+}
+h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+h1:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+/* sektioner*/
+h2::before {
+    counter-increment: section;
+    content: "Section " counter(section) ": ";
+  }
+
+

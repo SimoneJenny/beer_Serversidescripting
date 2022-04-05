@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('Partiels/head') %> 
+    <!--se head.ejs-->
+</head>
+
+<body>
+    <!-- bliver ikke brugt længere-->
+    <form method="post">
+    <%- include('Partiels/Menu') %>
+    <h1> Øl Typer</h1>
+    <br><br><br>
+    <div>
+        <label type="navn"  style="margin-left:500px; font-family: fantasy; font-weight: bold;">Øl navn</label>
+    <input type="text" name = "navnforbeer"style="margin-left: 80px; height: 25px; width: 250px;" > 
+    </div>
+    <br>
+    <div>
+        <label type="navn"  style="margin-left: 500px;font-family: fantasy; font-weight: bold;">Farve</label>
+        <input type="text" name = "farvebeer" style="margin-left: 95px; height: 25px;width: 250px;" >
+    </div>
+    <br>
+    <div>
+        <label type="navn"  style="margin-left: 500px;font-family: fantasy; font-weight: bold;">Alkohol procent</label>
+        <input type="number" name = "procenter" value="0" style="margin-left: 25px;height: 25px;width: 250px;"></select>
+    </div>
+    <br>
+    <div>
+        <label type="navn"  style="margin-left: 500px;font-family: fantasy; font-weight: bold;">produktions år</label>
+        <input type="number" name = "produktion" value="2021" style="margin-left: 30px;height: 25px;width: 250px;"></select>
+    </div>
+    <br><br><br>
+
+    <input type="submit" value="Gem" style="margin-left: 800px;background-color: chartreuse;height: 25px; width: 70px;font-family: fantasy; font-weight: bold;">
+    <input type="reset" value="Nulstil" style="background-color: red;height: 25px;width: 70px;font-family: fantasy; font-weight: bold;">
+</form>
+    <h2>Database</h2>
+</body>
+</html>

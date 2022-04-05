@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partiels/head') %>
+</head>
+<body>
+    <%- include('Partiels/Menu') %>
+<div class="first">
+    <h1>Forside</h1><br>
+</div>
+<div class="second">
+    <h2 >Fag: Serverscripting </h2>
+    <h2 >  Elev: Simone Jenny Kjær Hansen</h2>
+</div>
+    
+    <br><br>
+    <ul>
+        <h2>Vores mest solge Øl Procenter</h2>
+        <% beers.forEach((beers)=>{ %>
+
+            <li><%= beers %></li>
+
+        <%}) %>
+    </ul><br>
+    <h2>Brugte scripts:</h2><br>
+    <h3>npm install ejs, 
+        nmp install morgan,
+         node app,
+         npm start, 
+         npm install mongoose,
+         npm install express-fileupload</h3>
+    
+</body>
+
+</html>
